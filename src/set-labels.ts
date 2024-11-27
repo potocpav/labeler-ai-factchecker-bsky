@@ -26,6 +26,7 @@ for (const label of LABELS) {
 }
 
 try {
+  logger.info(labelDefinitions);
   await setLabelerLabelDefinitions(loginCredentials, labelDefinitions);
   logger.info('Label definitions set successfully.');
 } catch (error) {

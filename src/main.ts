@@ -60,6 +60,7 @@ jetstream.on('error', (error) => {
 jetstream.onCreate(WANTED_COLLECTION, (event: CommitCreateEvent<typeof WANTED_COLLECTION>) => {
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (event.commit?.record?.subject?.uri?.includes(DID)) {
+    logger.info(event);
     label(event.did, event.commit.record.subject.uri.split('/').pop()!);
   }
 });
